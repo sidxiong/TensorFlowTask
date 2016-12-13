@@ -24,7 +24,7 @@ class TextClassifier(object):
         pool_layer_out = []
         input_channel = 1
         for i, filter_width in enumerate(filter_widths):
-            with tf.name_scope('conv-pool-layer%s' % i):
+            with tf.name_scope('conv-pool-layer'):
                 # Convolution layer
                 filter_shape = [filter_width, embedding_size, input_channel, num_filters]
                 # random initialization of weights

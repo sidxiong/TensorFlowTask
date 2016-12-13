@@ -143,8 +143,8 @@ def train(x_train, y_train, x_valid, y_valid, num_epoch=50, batch_size=128, drop
                         path = saver.save(sess, checkpoint_prefix, global_step=current_step)
                         print("Saved model checkpoint to {}\n".format(path))
 
-def test(test_X, test_y, restored_model_file, filter_size=[1, 2, 3],
-          embedding_dim=256, num_filters=128):
+def test(test_X, test_y, restored_model_file, filter_size=[3, 4, 5],
+          embedding_dim=128, num_filters=128):
     with tf.Graph().as_default():
         sess = tf.Session()
         with sess.as_default():
@@ -190,5 +190,5 @@ def test(test_X, test_y, restored_model_file, filter_size=[1, 2, 3],
 if __name__ == "__main__":
     with open('data_split.p', 'rb') as f:
         x_train, y_train, x_valid, y_valid, x_test, y_test = pkl.load(f)
-    #train(x_train, y_train, x_valid, y_valid)
-    test(x_test, y_test, 'runs/1481445809/checkpoints/model-6400')
+    train(x_train, y_train, x_valid, y_valid)
+    #test(x_test, y_test, 'runs/1481424646/checkpoints/model-4900')
