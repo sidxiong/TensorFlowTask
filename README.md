@@ -1,6 +1,13 @@
 # Image Task
 ## Usage example
 
+run python extract_data.py to create train/validation/test set named data_split.p
+
+Simply run python main.py and adjust parameters to train or test
+
+# Image Task
+## Usage example
+
 With images and pre-trained AlexNet model file in the directory, we can train and test models using the following snippet.
 
 ~~~python
@@ -26,9 +33,9 @@ train(train_X, train_y, valid_X, valid_y,
           dirname='simple-cnn', n_epoch=30, batch_size=128)
       
 # resume training         
-      train(train_X, train_y, valid_X, valid_y, restored_model_file='model-2000',
-          net_name='an_fc3', learning_rate=1e-3, 
-              dirname='simple-cnn', n_epoch=30, batch_size=128)
+train(train_X, train_y, valid_X, valid_y, restored_model_file='model-2000',
+    net_name='an_fc3', learning_rate=1e-3, 
+        dirname='simple-cnn', n_epoch=30, batch_size=128)
 
 # test
 test(test_X, test_y, net_name='an_fc3')   
