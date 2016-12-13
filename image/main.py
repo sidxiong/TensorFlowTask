@@ -145,6 +145,7 @@ def test(test_X, test_y, restored_model_file, net_name='an_direct'):
               net.X: test_X,
               net.y: test_y
             }
+            # update feed dict to adapt different networks
             feed_dict.update(_fd_test)
             loss, accuracy = sess.run([net.loss, net.accuracy], feed_dict)
             time_str = datetime.datetime.now().isoformat()

@@ -7,10 +7,15 @@ import numpy as np
 from myutil import conv
 
 class AlexNet(object):
+    """
+    Base class for AlexNet's conv layers. To be inherited by model classes.
+    """
+
     def __init__(self, size=(227, 227, 3)):
         self.X = tf.placeholder(tf.float32, shape=(None,) + size)
         self.y = tf.placeholder(tf.float32, shape=(None, 2))
 
+        # pre-trained model downloaded from caffe's website
         pretrained_AlexNet = np.load('bvlc_alexnet.npy').item()
         conv1_W = pretrained_AlexNet['conv1'][0]
         conv1_b = pretrained_AlexNet['conv1'][1]
