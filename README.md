@@ -1,9 +1,9 @@
 # Text Task
 ## Usage example
 
-run python extract_data.py to create train/validation/test set named data_split.p
+run `python extract_data.py` to create train/validation/test set named data_split.p
 
-Simply run python main.py and adjust parameters to train or test
+Simply run `python main.py` and adjust parameters to train or test
 
 # Image Task
 ## Usage example
