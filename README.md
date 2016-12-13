@@ -38,7 +38,7 @@ train(train_X, train_y, valid_X, valid_y, restored_model_file='model-2000',
       dirname='simple-cnn', n_epoch=30, batch_size=128)
 
 # test
-test(test_X, test_y, net_name='an_fc3')   
+test(test_X, test_y, restored_model_file='runs/an_fc3/checkpoints/model-3750', net_name='an_fc3')  
 ~~~
 
 ## Using TensorBoard
